@@ -1,9 +1,7 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-var utils = require('../helpers/utils');
-var getDate = utils.getDate;
+import React, { PropTypes } from 'react';
+import { getDate } from '../helpers/utils';
 
-var styles = {
+const styles = {
   dayContainer: {
     display: 'flex',
     alignItems: 'center',
@@ -19,14 +17,14 @@ var styles = {
   weather: {
     height: 130
   }
-}
+};
 
-function DayItem (props) {
-  var date = getDate(props.day.dt);
-  var icon = props.day.weather[0].icon;
+function DayItem(props) {
+  const date = getDate(props.day.dt);
+  const icon = props.day.weather[0].icon;
   return (
     <div style={styles.dayContainer} onClick={props.handleClick}>
-      <img style={styles.weather} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather' />
+      <img style={styles.weather} src={`./app/images/weather-icons/${icon}.svg`} alt='Weather' />
       <h2 style={styles.subheader}>{date}</h2>
     </div>
   )
@@ -38,6 +36,6 @@ DayItem.propTypes = {
     weather: PropTypes.array.isRequired,
   }).isRequired,
   handleClick: PropTypes.func,
-}
+};
 
-module.exports = DayItem;
+export default DayItem;

@@ -1,7 +1,6 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-function Button (props) {
+function Button(props) {
   return (
     <button type='button'
       style={{margin: 10}}
@@ -12,7 +11,7 @@ function Button (props) {
   )
 }
 
-function InputField (props) {
+function InputField(props) {
   return (
     <input
       className='form-control'
@@ -23,7 +22,7 @@ function InputField (props) {
   )
 }
 
-function getStyles (props) {
+function getStyles(props) {
   return {
     display: 'flex',
     flexDirection: props.direction || 'column',
@@ -34,7 +33,7 @@ function getStyles (props) {
   }
 }
 
-function GetCity (props) {
+function GetCity(props) {
   return (
     <div style={getStyles(props)}>
       <InputField
@@ -53,6 +52,6 @@ GetCity.propTypes = {
   onSubmitCity: PropTypes.func.isRequired,
   onUpdateCity: PropTypes.func.isRequired,
   city: PropTypes.string.isRequired
-}
+};
 
-module.exports = GetCity;
+export default GetCity;
